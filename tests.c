@@ -7,12 +7,13 @@
 #include "framework.h"
 #include "framework_api.h"
 
+char *testName;
 typedef void (*testcase_t)(void);
 
 int testCreateTopic();
 
 testcase_t testcases[] = {
-        testCreateTopic,
+        &testCreateTopic,
 };
 
 int
