@@ -58,6 +58,7 @@ test_block_publisher()
     uint64_t max_msgs = 10;
     uint64_t nmsg = 0;
     int child_status = 0;
+    status_t status = ok;
     char *topic_name = "block";
     char *msg = "msg";
     char *rmsg = NULL;
