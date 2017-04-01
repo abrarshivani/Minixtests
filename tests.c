@@ -8,7 +8,7 @@
 #include "framework_api.h"
 
 char *testName;
-typedef void (*testcase_t)();
+typedef int (*testcase_t)();
 
 int testCreateTopic();
 
