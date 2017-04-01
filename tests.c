@@ -71,10 +71,10 @@ test_block_publisher()
     if (fork() == 0) {
         add_subscriber(topic_name);
         for (nmsg = 0; nmsg < max_msgs; nmsg++) {
-            sleep(2);
+            sleep(3);
             status = retrieve_message(topic_name, &rmsg);
             if (status == ok) {
-                printf("Message Retrieved: %s\n", nmsg);
+                printf("Message Retrieved: %d\n", nmsg);
                 free(rmsg);
             }
         }
@@ -82,7 +82,7 @@ test_block_publisher()
     } // child process
 
     for (nmsg = 0; nmsg < max_msgs; nmsg++) {
-        printf("Publishing msg: %s\n", nmsg);
+        printf("Publishing msg: %d\n", nmsg);
         block(topic_name, msg);
     }
     wait(&child_status);
@@ -93,5 +93,5 @@ int block(char *topic_name, char *message) {
     do {
         sleep(1);
         status = publish_message(topic_name, message);
-    } while(status != err_msg_full);
+    } while(status == err_msg_full);
 }
