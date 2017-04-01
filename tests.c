@@ -72,7 +72,7 @@ test_block_publisher()
         add_subscriber(topic_name);
         for (nmsg = 0; nmsg < max_msgs; nmsg++) {
             sleep(2);
-            status = retrieve_msg(topic_name, &rmsg);
+            status = retrieve_message(topic_name, &rmsg);
             if (status == ok) {
                 printf("Message Retrieved: %s\n", nmsg);
                 free(rmsg);
