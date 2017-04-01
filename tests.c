@@ -20,7 +20,7 @@ static int test_add_publisher_subscriber_unknown_topic();
 static int test_retrieve_unknown_topic();
 static int test_retrieve_different_topic();
 
-char error_msgs[] = {
+char *error_msgs[] = {
         "SUCCESS",
         "error",
         "Already Publisher",
