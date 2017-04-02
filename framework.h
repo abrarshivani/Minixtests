@@ -12,7 +12,7 @@
 /* return code definitions */
 typedef int RC;
 
-#define RC_OK 1
+#define RC_OK 0
 
 /* holder for error messages */
 extern char *RC_message;
@@ -39,5 +39,6 @@ extern char *errorMessage (RC error);
 	exit(1);							\
       }									\
   } while(0);
+
 
 #endif //FRAMEWORK_H

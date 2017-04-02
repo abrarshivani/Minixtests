@@ -47,6 +47,7 @@ extern char *testName;
     if ((expected) != (real))					\
       {									\
 	printf("[%s-%s-L%i-%s] FAILED: expected <%i> but was <%i>: %s\n",TEST_INFO, expected, real, message); \
+    printf("Please reboot and try again...\n"); \
 	exit(1);							\
       }									\
     printf("[%s-%s-L%i-%s] OK: expected <%i> and was <%i>: %s\n",TEST_INFO, expected, real, message); \
@@ -80,9 +81,10 @@ extern char *testName;
   do {									\
     int result = (expected);						\
     if (result == (RC_OK))						\
-      {									\
-	printf("[%s-%s-L%i-%s] FAILED: expected an error: %s\n",TEST_INFO, message); \
-	exit(1);							\
+    {									\
+	    printf("[%s-%s-L%i-%s] FAILED: expected an error: %s\n",TEST_INFO, message); \
+        printf("\nPlease reboot and try again..."); \
+	    exit(1);							\
       }									\
     printf("[%s-%s-L%i-%s] OK: expected an error and was RC <%i>: %s\n",TEST_INFO,  result , message); \
   } while(0)
