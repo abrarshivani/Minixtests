@@ -154,6 +154,6 @@ test_add_subscriber_twice()
     status = add_subscriber(topic_name);
     ASSERT_EQUALS_INT(status, ok, "Add subscriber");
     status = add_subscriber(topic_name);
-    ASSERT_EQUALS_INT(status, err_already_publisher, "Add subscriber again");
+    ASSERT_EQUALS_INT(status, err_already_subscriber, "Add subscriber again");
     return status;
 }
