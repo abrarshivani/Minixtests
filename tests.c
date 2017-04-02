@@ -123,7 +123,7 @@ test_create_duplicate_topic()
     status = create_topic(topic_name);
     ASSERT_EQUALS_INT(status, ok, "Create topic duptest");
     status = create_topic(topic_name);
-    ASSERT_EQUALS_INT(status, ok, "Create topic again duptest");
+    ASSERT_EQUALS_INT(status, err_topic_exist, "Create topic again duptest");
     return status;
 }
 
